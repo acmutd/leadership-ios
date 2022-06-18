@@ -14,7 +14,7 @@ struct TeamProfileView: View {
     @State var data: FullTeam = DataManager.placeholderTeam
     
     var body: some View {
-        VStack(spacing: 0) {
+        VStack {
             Spacer()
             Text("\(minimumProfile.name)")
                 .font(.title)

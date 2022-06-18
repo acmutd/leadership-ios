@@ -10,6 +10,9 @@ iOS App designed to view the information available through the leadership projec
  - Scroll down to see the list of Apps & find the `Leadership iOS App`
  - Download the `GoogleService-Info.plist` file.
  - Open the project in XCode & move the `.plist` file to the root of the project.
+ - Install the `firebase-ios-sdk` and `GoogleSignIn` packages with the Swift Package Manager. Note: This project does not use Cocoa Pods.
+ - Follow the steps [here](https://developers.google.com/identity/sign-in/ios/start-integrating) to setup Google Sign In for your application. You'll find the correct OAuth Client ID to use in the `Cloudflare Access` project in the Google Cloud console. Note: Only the OAuth Client ID portion of this setup part does not use the `acm-core` project.
+ - Open the `ContentView.swift` file in XCode & add the Client ID where it says `INSERT-TOKEN-HERE`. 
  - Run the project.
 
 ### Contributors

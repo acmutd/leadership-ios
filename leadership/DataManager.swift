@@ -62,7 +62,7 @@ struct FullEvent: Hashable {
 class DataManager: NSObject {
     
     var db: Firestore!
-    static let placeholderOfficer = FullOfficer(id: "hCIvRwwOqqptxkQbHjBp", name: "Harsha Srikara", email: "harshasrikara@gmail.com", start: "09 Apr, 2019", end: "May 31, 2022", acm_email: "harsha.srikara@acmutd.co", linkedin: "https://linkedin.com/in/harshasrikara", role_list: ["HackUTD Experience Officer", "HackUTD Technical Lead", "Director of Development", "Strategic Advisor"], accolades: ["Congratulations"], teams: [], events: [])
+    static let placeholderOfficer = FullOfficer(id: "hCIvRwwOqqptxkQbHjBp", name: "Harsha Srikara", email: "harshasrikara@gmail.com", start: "09 Apr, 2019", end: "Present", acm_email: "harsha.srikara@acmutd.co", linkedin: "https://linkedin.com/in/harshasrikara", role_list: ["HackUTD Experience Officer", "HackUTD Technical Lead", "Director of Development", "Strategic Advisor"], accolades: ["Congratulations"], teams: [], events: [])
     static let placeholderMember = FullMember(id: "5aTBO9QPtGNGdyMK3rPD", name: "Jafar Ali", email: [], netid: "jaa190000", classification: "Freshman", major: "Computer Science", participation: ["Projects", "Projects F19"], teams: [])
     static let placeholderTeam = FullTeam(id: "yGRXQVdfGmVHxonxTyvJ", name: "HashPost", participants: [], officer: Link(id: "hCIvRwwOqqptxkQbHjBp", name: "Harsha Srikara"), director: [], tags: ["Projects"])
     static let placeholderEvent = FullEvent(id: "UDjOvVIjZcKVktrABWVv", name: "Hacktoberfest", date_start: "17 Oct, 2020", date_end: "17 Oct, 2020", team: [], director: Link(id: "hCIvRwwOqqptxkQbHjBp", name: "Harsha Srikara"), filter: ["hackathon"])

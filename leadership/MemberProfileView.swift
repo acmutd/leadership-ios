@@ -14,7 +14,7 @@ struct MemberProfileView: View {
     @State var data: FullMember = DataManager.placeholderMember
     
     var body: some View {
-        VStack(spacing: 0) {
+        VStack {
             Spacer()
             Text("\(minimumProfile.name)")
                 .font(.title)

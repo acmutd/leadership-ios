@@ -14,7 +14,7 @@ struct EventProfileView: View {
     @State var data: FullEvent = DataManager.placeholderEvent
     
     var body: some View {
-        VStack(spacing: 0) {
+        VStack {
             Spacer()
             Text("\(minimumProfile.name)")
                 .font(.title)

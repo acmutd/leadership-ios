@@ -12,9 +12,11 @@ struct OfficerProfileView: View {
     var minimumProfile: Link
     var SampleObject = DataManager()
     @State var data: FullOfficer = DataManager.placeholderOfficer
+    @State var accoladeText = ""
+    @State private var alert: Bool = false
     
     var body: some View {
-        VStack(spacing: 0) {
+        VStack {
             Spacer()
             Text("\(minimumProfile.name)")
                 .font(.title)
@@ -60,11 +62,27 @@ struct OfficerProfileView: View {
                     }
                 }
                 
+                if data.end == "Present" {
+                    Section(header: Text("Give an Accolade")) {
+                        TextField("Congratulations", text: $accoladeText)
+                        Button("Send Accolade", action: submitAccolade)
+                            .alert(isPresented: $alert) {
+                                Alert(title: Text("Yay, you've sent an accolade!"), message: Text("Note: This feature has not yet been implemented"))
+                            }
+                    }
+                }
+                
             }
         }
         .task {
             self.data = await SampleObject.getOfficer(id: minimumProfile.id)
         }
+    }
+    
+    func submitAccolade() -> Void {
+        print(accoladeText)
+        accoladeText = ""
+        alert = true
     }
 }
 

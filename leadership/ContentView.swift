@@ -13,7 +13,7 @@ import GoogleSignInSwift
 struct ContentView: View {
     var SampleObject = DataManager()
     @State var DataObj = DataManager.placeholderList
-    let signInConfig = GIDConfiguration(clientID: "INSERT-TOKEN-HERE")
+    let signInConfig = GIDConfiguration(clientID: "903890468897-u09pgiuifmmf64309311m3f9ejnehoku.apps.googleusercontent.com")
     @State var signedIn: Bool = false
     @State var currentUser: GIDProfileData = GIDProfileData()
     
@@ -56,7 +56,10 @@ struct ContentView: View {
         }
         .onAppear {
             GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
-                // Check if `user` exists; otherwise, do something with `error`
+                if let user = user {
+                    signedIn = true
+                    currentUser = user.profile!
+                }
             }
         }
         Text("Designed by Harsha Srikara")
