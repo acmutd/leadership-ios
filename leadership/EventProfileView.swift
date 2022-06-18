@@ -21,7 +21,11 @@ struct EventProfileView: View {
                 .fontWeight(.bold)
                 .padding(.bottom)
             HStack {
-                Text("\(data.date_start) to \(data.date_end)")
+                if (data.date_start == data.date_end) {
+                    Text("\(data.date_start)")
+                } else {
+                    Text("\(data.date_start) to \(data.date_end)")
+                }
             }
             Spacer()
             
@@ -29,12 +33,14 @@ struct EventProfileView: View {
                 Section(header: Text("Team")) {
                     ForEach(data.team, id: \.self) { officer in
                         HStack {
+                            Image(systemName: "person.fill")
                             NavigationLink(officer.name, destination: OfficerProfileView(minimumProfile: officer))
                         }
                     }
                 }
                 Section(header: Text("Director")) {
                     HStack {
+                        Image(systemName: "star.fill")
                         NavigationLink(data.director.name, destination: OfficerProfileView(minimumProfile: data.director))
                     }
                 }

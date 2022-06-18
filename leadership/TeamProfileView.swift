@@ -26,6 +26,7 @@ struct TeamProfileView: View {
                 Section(header: Text("Participants")) {
                     ForEach(data.participants, id: \.self) { participant in
                         HStack {
+                            Image(systemName: "person.fill")
                             NavigationLink(participant.name, destination: MemberProfileView(minimumProfile: participant))
                         }
                     }
@@ -34,6 +35,7 @@ struct TeamProfileView: View {
                 
                 Section(header: Text("Officer")) {
                     HStack {
+                        Image(systemName: "star.fill")
                         NavigationLink(data.officer.name, destination: OfficerProfileView(minimumProfile: data.officer))
                     }
                 }
@@ -41,6 +43,7 @@ struct TeamProfileView: View {
                 Section(header: Text("Director")) {
                     ForEach(data.director, id: \.self) { director in
                         HStack {
+                            Image(systemName: "star.fill")
                             NavigationLink(director.name, destination: OfficerProfileView(minimumProfile: director))
                         }
                     }
